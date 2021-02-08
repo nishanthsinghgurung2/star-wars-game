@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> for type (people) renders correctly 1`] = `
+<div
+  class="sc-bdfBwQ sc-gsTCUz sc-jSgupP emDVYV iPcSwN IfzQm"
+  data-testid="card-test-id-666"
+>
+  <div
+    class="sc-bdfBwQ sc-gsTCUz sc-gKsewC emDVYV iPcSwN kXWqov"
+  >
+    jedi
+  </div>
+  <div
+    class="sc-bdfBwQ sc-gsTCUz sc-iBPRYJ emDVYV iPcSwN fJnjGu"
+    data-testid="card-body-id-666"
+  >
+    <div
+      class="sc-bdfBwQ sc-gsTCUz sc-fubCfw emDVYV iPcSwN jPncyk"
+    >
+      <label
+        class="sc-pFZIQ"
+      >
+        Birth Year
+      </label>
+      <span
+        class="sc-jrAGrp iBfGkU"
+      >
+        11BB
+      </span>
+    </div>
+    <div
+      class="sc-bdfBwQ sc-gsTCUz sc-fubCfw emDVYV iPcSwN jPncyk"
+    >
+      <label
+        class="sc-pFZIQ"
+      >
+        Mass
+      </label>
+      <span
+        class="sc-jrAGrp iBfGkU"
+      >
+        81.5
+      </span>
+    </div>
+    <div
+      class="sc-bdfBwQ sc-gsTCUz sc-fubCfw emDVYV iPcSwN jPncyk"
+    >
+      <label
+        class="sc-pFZIQ"
+      >
+        Height
+      </label>
+      <span
+        class="sc-jrAGrp iBfGkU"
+      >
+        175
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Card /> for type (starships) renders correctly 1`] = `
+<div
+  class="sc-bdfBwQ sc-gsTCUz sc-jSgupP emDVYV iPcSwN IfzQm"
+  data-testid="card-test-id-12345"
+>
+  <div
+    class="sc-bdfBwQ sc-gsTCUz sc-gKsewC emDVYV iPcSwN kXWqov"
+  >
+    jedi star fighter
+  </div>
+  <div
+    class="sc-bdfBwQ sc-gsTCUz sc-iBPRYJ emDVYV iPcSwN fJnjGu"
+    data-testid="card-body-id-12345"
+  >
+    <div
+      class="sc-bdfBwQ sc-gsTCUz sc-fubCfw emDVYV iPcSwN jPncyk"
+    >
+      <label
+        class="sc-pFZIQ"
+      >
+        Model
+      </label>
+      <span
+        class="sc-jrAGrp iBfGkU"
+      >
+        delta-7 model
+      </span>
+    </div>
+    <div
+      class="sc-bdfBwQ sc-gsTCUz sc-fubCfw emDVYV iPcSwN jPncyk"
+    >
+      <label
+        class="sc-pFZIQ"
+      >
+        Length
+      </label>
+      <span
+        class="sc-jrAGrp iBfGkU"
+      >
+        10
+      </span>
+    </div>
+    <div
+      class="sc-bdfBwQ sc-gsTCUz sc-fubCfw emDVYV iPcSwN jPncyk"
+    >
+      <label
+        class="sc-pFZIQ"
+      >
+        Cargo Capacity
+      </label>
+      <span
+        class="sc-jrAGrp iBfGkU"
+      >
+        1000
+      </span>
+    </div>
+    <div
+      class="sc-bdfBwQ sc-gsTCUz sc-fubCfw emDVYV iPcSwN jPncyk"
+    >
+      <label
+        class="sc-pFZIQ"
+      >
+        Hyperdrive Rating
+      </label>
+      <span
+        class="sc-jrAGrp iBfGkU"
+      >
+        1.5
+      </span>
+    </div>
+  </div>
+</div>
+`;
