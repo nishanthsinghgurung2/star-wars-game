@@ -1,5 +1,4 @@
 import { MockedProvider } from '@apollo/client/testing';
-import './pages/game_play/game_components/node_modules/@testing-library/jest-dom/extend-expect';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
@@ -47,7 +46,7 @@ describe('render app level routs as expected', () => {
     'should render board option for (%i) on navigation to Play',
     (label) => {
       userEvent.click(screen.getByText(/Play/i), leftClick);
-      expect(within(screen.getByTestId('main')).getByText(label)).toBeInTheDocument();
+      expect(within(screen.getByTestId('main')).getByText(label)).toBeDefined();
     },
   );
 
@@ -59,6 +58,6 @@ describe('render app level routs as expected', () => {
 
   it('loads 404 page on a bad route', () => {
     history.push('/some/bad/route');
-    expect(screen.getByText(PAGE_NOT_FOUND_MESSAGE)).toBeInTheDocument();
+    expect(screen.getByText(PAGE_NOT_FOUND_MESSAGE)).toBeDefined();
   });
 });

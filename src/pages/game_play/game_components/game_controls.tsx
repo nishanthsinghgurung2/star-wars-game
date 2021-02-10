@@ -23,7 +23,6 @@ const Controls: React.FC<ControlsProps> = ({
     if (history.length === 0) return;
     setCurrGame(history[history.length - 1]);
   }, [history]);
-
   return (
     <Container>
       <ControlsContainer>

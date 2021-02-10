@@ -31,14 +31,14 @@ describe('<Card />', () => {
 
       const cardUi = screen.getByTestId(`card-test-id-${card.id}`);
 
-      expect(within(cardUi).queryByText(card.id)).not.toBeInTheDocument();
-      expect(within(cardUi).getByText(card.name)).toBeInTheDocument();
+      expect(within(cardUi).queryByText(card.id)).toBeNull();
+      expect(within(cardUi).getByText(card.name)).toBeDefined();
 
       Object.entries(card)
         .filter(([key]) => !IDENTITY_FIELDS.includes(key))
         .map(([key, val]) => {
-          expect(within(cardUi).getByText(camelCaseToSentenceCase(key))).toBeInTheDocument();
-          expect(within(cardUi).getByText(val as string)).toBeInTheDocument();
+          expect(within(cardUi).getByText(camelCaseToSentenceCase(key))).toBeDefined();
+          expect(within(cardUi).getByText(val as string)).toBeDefined();
         });
     });
   });

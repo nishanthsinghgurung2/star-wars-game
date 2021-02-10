@@ -1,10 +1,8 @@
-import '../game_play/game_components/node_modules/@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import * as Factory from 'factory.ts';
 import faker from 'faker';
 import * as React from 'react';
 import { HistoryContext } from '../../App';
-import { mockResponse, renderWithMocks } from '../../test_utils/helpers';
 import { IHistory } from '../../App';
 import History, { NO_HISTORY_MESSAGE } from './game_index';
 
@@ -26,7 +24,7 @@ const customRender = (children, { providerProps, ...renderOptions }) => {
 it('History shows default value', () => {
   render(<History />);
 
-  expect(screen.getByText(NO_HISTORY_MESSAGE)).toBeInTheDocument();
+  expect(screen.getByText(NO_HISTORY_MESSAGE)).toBeDefined();
 });
 
 test('shows value from provider as expected', () => {
@@ -71,12 +69,4 @@ test('shows value from provider as expected', () => {
   expect(screen.getAllByTestId(/field-winner-/).length).toEqual(10);
   expect(screen.getAllByTestId(/field-winningValue-/).length).toEqual(10);
   expect(screen.getAllByTestId(/field-compField-/).length).toEqual(10);
-});
-
-it('renders loading state for (%s)', async () => {
-  const mocks = mockResponse('starships', 0);
-  renderWithMocks(mocks, <History />);
-
-  // userEvent.click(screen.getByText(label), { button: 0 });
-  // expect(screen.getByText(LOADING_MESSAGE)).toBeInTheDocument();
 });

@@ -18,7 +18,7 @@ export interface Theme {
     danger: IPalette;
   };
 }
-// https://loading.io/color/feature/
+
 export const defaultTheme: Theme = {
   borderRadius: '4px',
   color: '#FFF',

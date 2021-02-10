@@ -6,12 +6,12 @@ export interface IVariant {
   theme: Theme;
 }
 
-export const vaiantPalette = (props: IVariant): IPalette =>
+export const variantPalette = (props: IVariant): IPalette =>
   props.theme?.palette?.[props.variant] || props.theme?.palette?.dark;
 
 export const VariantContainer = styled.div<IVariant>`
-  background: ${(props) => vaiantPalette(props)?.main};
-  color: ${(props) => vaiantPalette(props)?.contrastText};
+  background: ${(props) => variantPalette(props)?.main};
+  color: ${(props) => variantPalette(props)?.contrastText};
 `;
 
 export const Container = styled(VariantContainer)`

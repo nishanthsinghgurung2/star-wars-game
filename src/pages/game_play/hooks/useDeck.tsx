@@ -29,7 +29,7 @@ const useDeck: UseDeck = (suit: string) => {
     !data || !records || records.length < 2
       ? setErrors((errors) => ({
           ...errors,
-          game: new RangeError('Could not find enogh records for a game.'),
+          game: new RangeError('Could not find enough records for a game.'),
         }))
       : setDeck(records);
   }, [suit, loading, apolloError, data]);

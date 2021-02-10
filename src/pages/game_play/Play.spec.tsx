@@ -1,4 +1,3 @@
-import './game_components/node_modules/@testing-library/jest-dom/extend-expect';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { GraphQLError } from 'graphql';
@@ -17,15 +16,14 @@ describe.each(Object.entries(CARD_SUIT_META).map(([key, { label }]) => [key, lab
       renderWithMocks(mocks, <Play />);
 
       userEvent.click(screen.getByText(label), { button: 0 });
-      expect(screen.getByText(LOADING_MESSAGE)).toBeInTheDocument();
+      expect(screen.getByText(LOADING_MESSAGE)).toBeDefined();
     });
 
     it('renders success state for (%s)', async () => {
       const mocks = mockResponse(key, 10);
       renderWithMocks(mocks, <Play />);
-
       userEvent.click(screen.getByText(label), { button: 0 });
-      expect(await screen.findByText(/Play Again/i)).toBeInTheDocument();
+      expect(await screen.findByText(/Play Again/i)).toBeDefined();
       expect((await screen.findAllByTestId(/card-test-id/i)).length).toEqual(2);
     });
 
@@ -36,7 +34,7 @@ describe.each(Object.entries(CARD_SUIT_META).map(([key, { label }]) => [key, lab
         renderWithMocks(mocks, <Play />);
 
         userEvent.click(screen.getByText(label), { button: 0 });
-        expect(await screen.findByText(ERROR_MESSAGE)).toBeInTheDocument();
+        expect(await screen.findByText(ERROR_MESSAGE)).toBeDefined();
       },
     );
 
@@ -52,7 +50,7 @@ describe.each(Object.entries(CARD_SUIT_META).map(([key, { label }]) => [key, lab
       renderWithMocks(mocks, <Play />);
 
       userEvent.click(screen.getByText(label), { button: 0 });
-      expect(await screen.findByText(ERROR_MESSAGE)).toBeInTheDocument();
+      expect(await screen.findByText(ERROR_MESSAGE)).toBeDefined();
     });
 
     it('renders graphql error state (%s)', async () => {
@@ -67,7 +65,7 @@ describe.each(Object.entries(CARD_SUIT_META).map(([key, { label }]) => [key, lab
       renderWithMocks(mocks, <Play />);
 
       userEvent.click(screen.getByText(label), { button: 0 });
-      expect(await screen.findByText(ERROR_MESSAGE)).toBeInTheDocument();
+      expect(await screen.findByText(ERROR_MESSAGE)).toBeDefined();
     });
 
     it('renders correct number of cards after adding a player state (%s)', async () => {
@@ -76,7 +74,7 @@ describe.each(Object.entries(CARD_SUIT_META).map(([key, { label }]) => [key, lab
 
       userEvent.click(screen.getByText(label), { button: 0 });
       const add = await screen.findByText(/Add Player/i);
-      expect(add).toBeInTheDocument();
+      expect(add).toBeDefined();
       userEvent.click(add, { button: 0 });
       expect((await screen.findAllByTestId(/card-test-id/i)).length).toEqual(3);
     });
@@ -97,7 +95,7 @@ describe.each(Object.entries(CARD_SUIT_META).map(([key, { label }]) => [key, lab
 
       userEvent.click(screen.getByText(label), { button: 0 });
       const add = await screen.findByText(/Add Player/i);
-      expect(add).toBeInTheDocument();
+      expect(add).toBeDefined();
       doTimes(3, () => userEvent.click(add, { button: 0 }));
       expect((await screen.findAllByTestId(/card-test-id/i)).length).toEqual(3);
     });
@@ -108,7 +106,7 @@ describe.each(Object.entries(CARD_SUIT_META).map(([key, { label }]) => [key, lab
 
       userEvent.click(screen.getByText(label), { button: 0 });
       const play = await screen.findByText(/Play Again/i);
-      expect(play).toBeInTheDocument();
+      expect(play).toBeDefined();
       userEvent.click(play, { button: 0 });
       expect((await screen.findAllByTestId(/card-test-id/i)).length).toEqual(2);
     });
